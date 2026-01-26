@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <title>ZINOX VPN IRAN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="فروش V2Ray پرمیوم و تست رایگان | ZINOX VPN IRAN">
-<meta name="theme-color" content="#00ffe1">
+<meta name="theme-color" content="#ff0033">
 
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -13,143 +12,134 @@
 *{box-sizing:border-box;font-family:'Vazirmatn',sans-serif}
 body{
   margin:0;
-  background:radial-gradient(circle at top,#08141a,#000);
+  background:radial-gradient(circle at top,#150000,#000);
   color:#fff;
 }
+.container{width:95%;max-width:1200px;margin:auto;padding:40px 0}
 a{text-decoration:none;color:inherit}
-.container{width:95%;max-width:1200px;margin:auto;padding:30px 0}
 
 /* HEADER */
 .header{
   display:flex;
-  align-items:center;
   justify-content:center;
-  gap:12px;
-  margin-bottom:40px;
-}
-.header img{
-  width:42px;
-  opacity:.9;
-  filter:drop-shadow(0 0 6px #00ffe1);
+  align-items:center;
+  gap:14px;
+  margin-bottom:50px;
 }
 .header h1{
-  font-size:38px;
-  color:#00ffe1;
-  text-shadow:0 0 22px #00ffe1;
+  font-size:40px;
+  color:#ff0033;
+  text-shadow:0 0 25px #ff0033;
 }
 
 /* CARD */
 .card{
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.15);
-  backdrop-filter:blur(16px);
-  border-radius:22px;
-  padding:25px;
-  margin-bottom:35px;
-  box-shadow:0 0 50px rgba(0,255,225,0.08);
-  animation:fadeUp .7s ease;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,0,0,0.35);
+  border-radius:24px;
+  padding:30px;
+  margin-bottom:40px;
+  box-shadow:0 0 60px rgba(255,0,0,0.15);
   position:relative;
-  overflow:hidden;
-}
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(120deg,transparent,rgba(0,255,225,.08),transparent);
-  animation:shine 6s infinite;
-}
-@keyframes shine{
-  0%{transform:translateX(-100%)}
-  100%{transform:translateX(100%)}
+  animation:fadeUp .7s ease;
 }
 @keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px)}
+  from{opacity:0;transform:translateY(40px)}
   to{opacity:1;transform:translateY(0)}
 }
 
-/* BUTTON */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:14px 26px;
-  border-radius:14px;
-  background:linear-gradient(135deg,#00ffe1,#0077ff);
-  color:#000;
-  font-weight:bold;
-  transition:.3s;
+/* ALERT */
+.alert{
+  text-align:center;
 }
-.btn:hover{transform:scale(1.08);box-shadow:0 0 25px #00ffe1}
+.alert h2{
+  font-size:30px;
+  color:#ff4d4d;
+  text-shadow:0 0 18px #ff4d4d;
+}
+.alert p{
+  font-size:16px;
+  opacity:.85;
+  margin-top:15px;
+}
+.alert .icon{
+  font-size:60px;
+  margin-bottom:10px;
+}
 
-/* TEST */
-.hero-title{font-size:28px;color:#00ffae}
-.attention{color:#ff4d4d;font-weight:bold;margin:10px 0}
-.timer{display:inline-flex;align-items:center;gap:6px;font-size:14px;opacity:.85}
-
-/* COPY */
-.code{
-  background:#000;
-  border:1px solid #00ffe1;
-  border-radius:14px;
-  padding:14px;
-  font-size:13px;
-  word-break:break-all;
-  margin:12px 0;
+/* DISABLED PRODUCT */
+.disabled{
   position:relative;
+  opacity:.4;
 }
-.copy-btn{
+.disabled::after{
+  content:"✖";
   position:absolute;
-  top:8px;
-  left:8px;
-  font-size:12px;
-  cursor:pointer;
-  background:#00ffe1;
-  color:#000;
-  padding:4px 10px;
-  border-radius:8px;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:120px;
+  color:#ff0033;
+  background:rgba(0,0,0,.6);
 }
-
-/* PRODUCT */
-.product{cursor:pointer;transition:.3s}
-.product:hover{transform:scale(1.03)}
-.product small{opacity:.6;font-size:13px}
-.product-details{display:none;margin-top:15px}
 
 /* APPS */
 .apps{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:20px;
   text-align:center;
+}
+
+/* BUTTON */
+.btn{
+  padding:16px 34px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#ff0033,#ff9900);
+  color:#000;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.3s;
+}
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 30px #ff0033;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+.modal-box{
+  background:#111;
+  border:1px solid #ff0033;
+  border-radius:20px;
+  padding:40px;
+  text-align:center;
+  box-shadow:0 0 40px #ff0033;
+  animation:fadeUp .4s ease;
+}
+.modal-box h3{
+  color:#ff4d4d;
+  font-size:24px;
+}
+.modal-box p{
+  margin-top:12px;
+  opacity:.85;
 }
 
 /* FOOTER */
 .footer{
   text-align:center;
   opacity:.6;
-  margin:50px 0 20px;
-  font-size:14px;
-}
-
-/* TOAST */
-.toast{
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  background:#00ffe1;
-  color:#000;
-  padding:12px 20px;
-  border-radius:14px;
-  display:none;
-  font-weight:bold;
-  box-shadow:0 0 25px #00ffe1;
-}
-
-@media(max-width:600px){
-  .header h1{font-size:28px}
-  .btn{width:100%}
-  .code{font-size:12px}
+  margin-top:60px;
 }
 </style>
 </head>
@@ -159,44 +149,23 @@ a{text-decoration:none;color:inherit}
 
 <!-- HEADER -->
 <div class="header">
-  <img src="https://static.thenounproject.com/png/2507787-200.png">
   <h1>ZINOX VPN IRAN</h1>
 </div>
 
-<!-- TEST -->
-<div class="card">
-  <div class="hero-title">🧪 V2Ray تست رایگان</div>
-  <div class="attention">⚠️ برای دریافت ابتدا باید در کانال تلگرام جوین شوید</div>
-  <div class="timer">⏱ بروزرسانی هر 27 ساعت | ⛔ هر 3 هفته یکبار</div><br>
-
-  <a class="btn" href="https://t.me/ZINOX_VPN_IRAN" target="_blank" onclick="unlock()">جوین کانال تلگرام</a>
-
-  <div id="test" style="display:none;margin-top:20px">
-    <div class="code"><div class="copy-btn" onclick="copy(this)">کپی</div>
-vless://c9b0932d-8d1c-43c5-b64b-e9a74719c76d@dorthy.ns.cloudflare.com:443?security=tls&sni=sunseet.info&fp=chrome&type=ws&path=/hsdgsws&host=sunseet.info&encryption=none
-    </div>
-
-    <div class="code"><div class="copy-btn" onclick="copy(this)">کپی</div>
-vless://a11ab9c5-4155-430b-9efc-7a7122531382@japan.geodema.network:443?security=reality&sni=japan.geodema.network&fp=qq&pbk=EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8&sid=1ed136481e0ede74&type=tcp&flow=xtls-rprx-vision&encryption=none
-    </div>
-
-    <div class="code"><div class="copy-btn" onclick="copy(this)">کپی</div>
-vless://d851e68a-af64-4dfc-a85a-7ffad2483230@betty.ns.cloudflare.com:443?security=tls&sni=639031180460930556.altima-amsjq.info&type=ws&path=/oqxdqtws&host=639031180460930556.altima-amsjq.info&encryption=none
-    </div>
-  </div>
+<!-- FREE TEST ALERT -->
+<div class="card alert">
+  <div class="icon">🚫</div>
+  <h2>اتصال با سرور ممکن نیست!</h2>
+  <p>
+    به علت <b style="color:#ff4d4d">ملی شدن اینترنت</b>، ارتباط با سرورها با اختلال شدید مواجه شده است.<br>
+    بزودی سرور مخصوص اینترنت ملی فعال خواهد شد.
+  </p>
 </div>
 
-<!-- PRODUCT -->
-<div class="card product" onclick="toggleProduct()">
-  <h2>💎 بسته پرمیوم V2Ray <small>(برای مشاهده اطلاعات کامل کلیک کنید)</small></h2>
-  <p>30GB – سرعت بالا – 1 ماه</p>
-  <div class="product-details" id="product">
-    <p>نوع: پرمیوم</p>
-    <p>قیمت: <b style="color:#00ff88">190 هزار تومان</b></p>
-    <p>برای خرید و استعلام سایر بسته‌ها:</p>
-    <b>@ZINOX_VPN_IR</b><br><br>
-    <a class="btn" href="https://t.me/ZINOX_VPN_IRAN" target="_blank">خرید از تلگرام</a>
-  </div>
+<!-- PREMIUM DISABLED -->
+<div class="card disabled">
+  <h2>💎 بسته پرمیوم V2Ray</h2>
+  <p>امکان خرید بسته وجود ندارد</p>
 </div>
 
 <!-- APPS -->
@@ -204,118 +173,46 @@ vless://d851e68a-af64-4dfc-a85a-7ffad2483230@betty.ns.cloudflare.com:443?securit
   <h2>📱 اپلیکیشن‌های پیشنهادی</h2>
   <div class="apps">
     <div>
-      <h3>💻 Nekoray (کامپیوتر)</h3>
-      <a class="btn" href="https://en.nekoray.org/" target="_blank">دانلود</a>
+      <h3>💻 Nekoray</h3>
+      <div class="btn" onclick="showModal()">دانلود</div>
     </div>
     <div>
-      <h3>📱 V2RayNG (موبایل)</h3>
-      <a class="btn" href="https://en.v2rayng.org/download/" target="_blank">دانلود</a>
+      <h3>📱 V2RayNG</h3>
+      <div class="btn" onclick="showModal()">دانلود</div>
     </div>
   </div>
 </div>
 
-<!-- JOIN -->
-<div style="text-align:center">
-  <a class="btn" href="https://t.me/ZINOX_VPN_IRAN" target="_blank">🚀 جوین کانال تلگرام</a>
+<!-- DOWNLOAD -->
+<div class="card" style="text-align:center">
+  <h2>دانلود اپ کانفیگ برای کامپیوتر</h2><br>
+  <div class="btn" onclick="showModal()">دانلود برنامه</div>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-  📧 پشتیبانی:
-  <a href="mailto:zinox.vpn@gmail.com">zinox.vpn@gmail.com</a><br><br>
-  © ZINOX VPN IRAN
+  © ZINOX VPN IRAN<br>
+  z inox.vpn@gmail.com
 </div>
 
 </div>
 
-<div class="toast" id="toast">✔ کپی شد</div>
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="hideModal()">
+  <div class="modal-box">
+    <h3>❌ برنامه از دسترس خارج شده است!</h3>
+    <p>به دلیل محدودیت‌های فعلی، امکان دریافت برنامه وجود ندارد.</p>
+  </div>
+</div>
 
 <script>
-const THREE_WEEKS = 21 * 24 * 60 * 60 * 1000;
-
-function unlock(){
-  const last = localStorage.getItem("zinox_test_time");
-  const now = Date.now();
-
-  if(last && now - last < THREE_WEEKS){
-    alert("⛔ دریافت کانفیگ تست فقط هر 3 هفته یکبار امکان‌پذیر است");
-    return;
-  }
-
-  setTimeout(()=>{
-    localStorage.setItem("zinox_test_time", now);
-    document.getElementById("test").style.display="block";
-  },2000);
+function showModal(){
+  document.getElementById("modal").style.display="flex";
 }
-
-function toggleProduct(){
-  let p=document.getElementById("product");
-  p.style.display=p.style.display==="block"?"none":"block";
-}
-
-function copy(el){
-  const text = el.parentElement.innerText.replace("کپی","").trim();
-  navigator.clipboard.writeText(text);
-  let t=document.getElementById("toast");
-  t.style.display="block";
-  setTimeout(()=>t.style.display="none",1800);
+function hideModal(){
+  document.getElementById("modal").style.display="none";
 }
 </script>
 
-
-  <section id="download-section" style="padding:80px 0; background:#111; text-align:center;">
-  <h2 style="color:#fff; font-family:sans-serif; font-size:32px; margin-bottom:40px;">
-    دانلود اپ کانفیگ برای کامپیوتر
-  </h2>
-  <a href="https://github.com/ZINXO-VPN/ZINOX-VPN/raw/refs/heads/main/ZinoxVPN.zip" download class="download-btn">
-      دانلود اپ کانفیگ برای کامپیوتر
-    <span></span>
-  </a>
-</section>
-
-<style>
-/* ===== استایل دکمه ===== */
-#download-section .download-btn {
-  position: relative;
-  display: inline-block;
-  padding: 18px 50px;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background: linear-gradient(45deg, #ff0047, #2c34c7, #00ffe7);
-  background-size: 300% 300%;
-  border-radius: 12px;
-  text-decoration: none;
-  overflow: hidden;
-  transition: 0.5s;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-#download-section .download-btn:hover {
-  background-position: 100% 0;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-  transform: scale(1.05);
-}
-
-/* افکت نوری روی دکمه */
-#download-section .download-btn span {
-  position: absolute;
-  display: block;
-  width: 0;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(255,255,255,0.2);
-  transition: 0.5s;
-}
-
-#download-section .download-btn:hover span {
-  width: 100%;
-}
-</style>
-
-  
 </body>
 </html>
