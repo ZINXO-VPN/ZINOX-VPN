@@ -4,123 +4,153 @@
 <meta charset="UTF-8">
 <title>ZINOX VPN IRAN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#00eaff">
-<meta name="description" content="ZINOX VPN IRAN - دانلود اپلیکیشن ها و اطلاعیه وضعیت">
-
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#ffffff">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;font-family:'Vazirmatn',sans-serif}
-body{
+*{
   margin:0;
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  color:#fff;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Vazirmatn',sans-serif
+}
+
+body{
+  background:linear-gradient(180deg,#f5f7fa,#e4e8f0);
+  color:#111;
   overflow-x:hidden;
 }
-.container{width:95%;max-width:1200px;margin:auto;padding:40px 0}
-a{text-decoration:none;color:inherit}
+
+.container{
+  width:92%;
+  max-width:1100px;
+  margin:auto;
+  padding:60px 0;
+}
 
 /* HEADER */
 .header{
   text-align:center;
-  margin-bottom:50px;
+  margin-bottom:70px;
+  animation:fadeDown 1s ease;
 }
 .header h1{
-  font-size:clamp(26px,5vw,42px);
-  color:#00eaff;
-  text-shadow:0 0 25px #00eaff;
+  font-size:clamp(28px,5vw,46px);
+  font-weight:700;
+  letter-spacing:2px;
+  background:linear-gradient(90deg,#000,#555);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 /* CARD */
 .card{
-  background:rgba(255,255,255,0.05);
-  border:1px solid rgba(0,234,255,0.3);
-  border-radius:20px;
-  padding:30px;
-  margin-bottom:30px;
-  backdrop-filter:blur(10px);
-  transition:.4s;
-}
-.card:hover{
-  box-shadow:0 0 40px rgba(0,234,255,0.3);
-  transform:translateY(-4px);
+  background:rgba(255,255,255,0.65);
+  backdrop-filter:blur(20px);
+  border-radius:22px;
+  padding:40px;
+  margin-bottom:35px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.08);
+  transition:.4s ease;
+  opacity:0;
+  transform:translateY(40px);
 }
 
-/* BUTTON */
-.btn{
-  display:inline-block;
-  padding:14px 30px;
-  border-radius:12px;
-  background:linear-gradient(135deg,#00eaff,#00ffa3);
-  color:#000;
-  font-weight:bold;
-  cursor:pointer;
-  transition:.3s;
+.card.show{
+  opacity:1;
+  transform:translateY(0);
 }
-.btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #00eaff;
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 50px rgba(0,0,0,0.12);
 }
 
 /* GRID */
 .apps{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
   text-align:center;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:14px 28px;
+  border-radius:30px;
+  background:#111;
+  color:#fff;
+  font-weight:500;
+  transition:.3s ease;
+}
+
+.btn:hover{
+  background:#000;
+  transform:scale(1.05);
 }
 
 /* PREMIUM */
 .premium{
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.2);
+  border:1px solid #ddd;
 }
 
-/* NOTICE POPUP */
+/* NOTICE */
 .notice{
   position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#111;
-  border:1px solid #00eaff;
-  padding:18px;
-  border-radius:14px;
-  width:280px;
-  box-shadow:0 0 25px rgba(0,234,255,0.4);
-  animation:fadeIn .5s ease;
-  z-index:999;
+  bottom:30px;
+  right:30px;
+  background:rgba(255,255,255,0.9);
+  backdrop-filter:blur(15px);
+  border-radius:18px;
+  padding:20px;
+  width:300px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.15);
+  animation:fadeUp .6s ease;
 }
 .notice h4{
-  margin:0 0 10px;
   font-size:14px;
-  color:#00eaff;
+  margin-bottom:10px;
 }
 .notice .close{
   position:absolute;
-  top:6px;
-  left:8px;
+  top:10px;
+  left:14px;
   cursor:pointer;
   font-size:16px;
-  color:#999;
+  opacity:.5;
 }
-.notice .close:hover{color:#fff}
-
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(20px)}
-  to{opacity:1;transform:translateY(0)}
-}
+.notice .close:hover{opacity:1}
 
 /* FOOTER */
 .footer{
   text-align:center;
-  margin-top:50px;
-  opacity:.7;
+  margin-top:60px;
   font-size:14px;
+  opacity:.6;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .card{padding:25px}
+  .notice{width:90%;right:5%}
 }
 </style>
 </head>
 
 <body>
+
 <div class="container">
 
 <div class="header">
@@ -128,8 +158,8 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <!-- APPS -->
-<div class="card">
-  <h2>📱 دانلود اپلیکیشن‌ها</h2>
+<div class="card reveal">
+  <h2>دانلود اپلیکیشن‌ها</h2><br>
   <div class="apps">
     <div>
       <h3>💻 Nekoray</h3>
@@ -143,36 +173,34 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <!-- PREMIUM -->
-<div class="card premium">
-  <h2>💎 بسته پرمیوم V2Ray</h2>
+<div class="card premium reveal">
+  <h2>بسته پرمیوم V2Ray</h2><br>
   <p>
-    درحال حاضر فروش محدود است.<br>
-    به پشتیبانی در تلگرام پیام بدهید.<br>
-    (کانفیگ رایگان در کانال تلگرام قرار می‌گیرید)
+  درحال حاضر فروش محدود است.<br>
+  به پشتیبانی در تلگرام پیام بدهید.<br>
+  (کانفیگ رایگان در کانال تلگرام قرار می‌گیرید)
   </p>
 </div>
 
-<!-- DOWNLOAD ZINOX -->
-<div class="card" style="text-align:center">
-  <h2>دانلود اپ ZINOX</h2>
+<!-- ZINOX -->
+<div class="card reveal" style="text-align:center">
+  <h2>دانلود اپ ZINOX</h2><br>
   <a class="btn" href="https://secure-tunnel--mahdiyarmoradi9.replit.app/" target="_blank">
-    دانلود اپ زینوکس
+    ورود اپ زینوکس
   </a>
 </div>
 
-<!-- UPDATE SECTION -->
-<div class="card" style="text-align:center">
-  <h2>ℹ️ اطلاعیه</h2>
+<!-- UPDATE -->
+<div class="card reveal" style="text-align:center">
+  <h2>اطلاعیه</h2><br>
   <p>
-    این بخش درحال بروزرسانی است.<br>
-    درصورتی که به کانفیگ تست نیاز دارید دکمه 
-    "دانلود اپ زینوکس" را کلیک کنید.
-    (اپ دانلودی نیست)
+  این بخش درحال بروزرسانی است.<br>
+  درصورتی که به کانفیگ تست نیاز دارید دکمه "ورود اپ زینوکس" را کلیک کنید.
   </p>
 </div>
 
 <div class="footer">
-  © ZINOX VPN IRAN
+© ZINOX VPN IRAN
 </div>
 
 </div>
@@ -185,6 +213,20 @@ a{text-decoration:none;color:inherit}
     رفتن به اپ
   </a>
 </div>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+window.addEventListener('scroll',()=>{
+  reveals.forEach(el=>{
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    if(elementTop < windowHeight - 80){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
