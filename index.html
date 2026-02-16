@@ -21,7 +21,7 @@ body{
   color:#fff;
 }
 
-/* ===== Animated Mesh Background ===== */
+/* ===== Animated Mesh Background (بدون انیمیشن حرکت) ===== */
 body::before{
   content:"";
   position:fixed;
@@ -30,13 +30,7 @@ body::before{
     radial-gradient(circle at 20% 30%, #00f5ff55, transparent 40%),
     radial-gradient(circle at 80% 70%, #0066ff55, transparent 40%),
     radial-gradient(circle at 50% 90%, #00ffaa33, transparent 40%);
-  animation:moveMesh 12s infinite alternate ease-in-out;
   z-index:-1;
-}
-
-@keyframes moveMesh{
-  0%{transform:scale(1) translate(0,0)}
-  100%{transform:scale(1.2) translate(-40px,-60px)}
 }
 
 /* ===== Container ===== */
@@ -61,10 +55,11 @@ body::before{
   margin-bottom:20px;
 }
 
+/* آیکون حرفه‌ای‌تر */
 .logo svg{
-  width:48px;
-  height:48px;
-  filter:drop-shadow(0 0 15px #00f5ff);
+  width:55px;
+  height:55px;
+  filter:drop-shadow(0 0 20px #00f5ff);
 }
 
 .header h1{
@@ -74,23 +69,6 @@ body::before{
   background:linear-gradient(90deg,#00f5ff,#0066ff,#00ffaa);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  position:relative;
-}
-
-.header::after{
-  content:"";
-  position:absolute;
-  top:50%;
-  left:-50%;
-  width:200%;
-  height:120%;
-  background:linear-gradient(120deg,transparent,#00f5ff33,transparent);
-  animation:shine 4s infinite;
-}
-
-@keyframes shine{
-  0%{transform:translateX(-100%)}
-  100%{transform:translateX(100%)}
 }
 
 /* ===== Card ===== */
@@ -118,7 +96,7 @@ body::before{
   text-align:center;
 }
 
-/* ===== Button ===== */
+/* ===== Button (موج نور متحرک اضافه شد) ===== */
 .btn{
   display:inline-block;
   margin-top:20px;
@@ -130,6 +108,28 @@ body::before{
   transition:.4s;
   position:relative;
   overflow:hidden;
+}
+
+/* موج نور */
+.btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:200%;
+  height:100%;
+  background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  animation:btnShine 2.5s infinite;
+}
+
+@keyframes btnShine{
+  0%{left:-100%}
+  100%{left:100%}
 }
 
 .btn:hover{
@@ -194,10 +194,15 @@ body::before{
 <div class="header">
 
 <div class="logo">
+
+<!-- آیکون حرفه‌ای‌تر -->
 <svg viewBox="0 0 24 24" fill="none">
 <path d="M12 2L3 7V12C3 17 7 20 12 22C17 20 21 17 21 12V7L12 2Z"
 stroke="#00f5ff" stroke-width="2"/>
+<path d="M9 12L11 14L15 10"
+stroke="#00ffaa" stroke-width="2"/>
 </svg>
+
 <h1>ZINOX VPN IRAN </h1>
 </div>
 
